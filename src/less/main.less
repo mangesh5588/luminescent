@@ -1,0 +1,132 @@
+
+/* variables*/
+
+@primanyPink:#ec79a5;
+@SeconPink:#cc5476;
+@errorColor: red;
+@titleColor:#3a376b;
+/* mixins*/
+
+.errorColor{color:@errorColor;}
+
+body {
+  padding-top: 54px;
+  color: #000;
+}
+
+.container {
+  padding-right: 0px;
+  padding-left: 0px;
+
+  .innerContainer{padding-top: 20px;
+  
+    .formSize{padding: 0 0 20px 0;}
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;    
+  }
+}
+
+@media (max-width: 776px) {
+  .gridBtnContainer{display: none;}
+  .listView .card-img-top{width:100% !important}
+  .custom-select{width:auto;}
+  .col-lg-4,.col-sm-6{padding-left:30px !important; }
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.pagination {
+  margin-bottom: 30px;
+}
+
+.card {
+  position: relative;
+  .markFav {
+    background: #ffffff;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    padding-top: 6px;
+    font-size: 26px;
+    text-align: center;
+    color: @primanyPink;
+  }
+
+  .card-body{
+    .price{
+      .oldPrice{text-decoration: line-through;}
+    }
+    .card-size{
+      span.rating{color: @SeconPink; padding: 0 0 0 5px;}
+    }
+    p.price{font-size: 2rem; color: @titleColor; font-weight: bold;
+    
+    span.oldPrice{font-size: 1.3rem !important; display: inline-block; padding:0 15px 0 15px; color: #a296a4 !important; font-weight: normal;}
+
+    span.savings{color: @SeconPink; font-size: 1.3rem; font-weight: normal;}
+    }
+
+    .card-title{
+      a{color:@titleColor}
+      a:hover{text-decoration: none; color:@titleColor}
+    }
+  }
+}
+
+.listView {
+  .card{
+    flex-direction: inherit;
+  }
+  .card-img-top{
+    width: 370px;
+    height: auto;
+  }
+}
+
+.gridBtnContainer{padding: 10px 0 0 0;
+
+  #btnGridView, #btnListView{color: @primanyPink} 
+  
+}
+
+form{padding: 20px 0 0;}
+
+.btn-primary.disabled, .btn-primary:disabled {cursor: not-allowed;}
+
+#name:focus #nameHelpBlock{display: block; border:1px solid @errorColor;}
+
+.form-group{
+  label:after{content: '*'; .errorColor()}
+  small{display: none;}
+}
+
+.jumbotron{margin-top: 20px; text-align: center;}
+
+#anchorTop {
+  padding: 10px 15px;
+  background: #000;
+  color: #fff;
+  border-radius: 3px;
+  position: fixed;
+  bottom: 20px;
+  right: 16px;
+  font-size: 20px;
+  display: none;
+  z-index: 999;
+  cursor: pointer;
+}
